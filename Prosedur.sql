@@ -60,10 +60,6 @@ BEGIN
     END
     ELSE IF @Mode = 'UPDATE'
     BEGIN
-        IF @Tanggal_Masuk IS NULL
-        BEGIN
-            Select @Tanggal_Masuk = Tanggal_Masuk from AlatDariSumber where Id_Alat = @Id_Alat AND Id_Sumber = @Id_Sumber;
-        END
         UPDATE AlatDariSumber
         SET Jumlah_Dari_Sumber = @Jumlah_Dari_Sumber
         WHERE Id_Alat = @Id_Alat AND Id_Sumber = @Id_Sumber AND Tanggal_Masuk = @Tanggal_Masuk;
